@@ -200,8 +200,8 @@ def main():
     df["東京駅までの分数"] = df["最寄駅"].map(cache)
     df = df.applymap(lambda x: x.replace('\xa0', ' ') if isinstance(x, str) else x)
 
-    # CSV 出力 (Shift-JIS/CP932)
-    df.to_csv(OUTPUT_CSV, index=False, encoding="cp932")
+    # CSV 出力 (UTF-8 with BOM for Excel compatibility)
+    df.to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
     print(f"\n出力完了: {OUTPUT_CSV}")
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@ from datetime import datetime
 HTML_DIR   = "html_data_all"
 OUTPUT_CSV = "suumo_mansions_final.csv"
 
-# CSV のカラム定義（課題表明書の項目順）
+# CSV のカラム定義
 COLUMNS = [
     "区名",
     "物件名",
